@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +42,16 @@
           <li><a href="#">Chocolates chips</a></li>
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
-          <li>
+          <li >
             <a href="/cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
               Cart
+            </a>
+          </li>
+          <li>
+            <a href="/logout.php" class="btn btn-warning navbar-btn">
+
+              Unlog
             </a>
           </li>
         </ul>
@@ -47,6 +59,7 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <strong>Hello <?php if (isset($_SESSION)){ echo $_SESSION['Login']; } ?> !</strong>
   </div>
+
 </header>
